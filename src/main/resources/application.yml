@@ -1,0 +1,6 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: env,actuator,mappings,health
+    enabled-by-default: true

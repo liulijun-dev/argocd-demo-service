@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.argocddemoservice;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,9 +9,10 @@ import java.util.Optional;
 @RestController
 public class DemoController {
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<String> helloWorld() {
-        String who = Optional.ofNullable(System.getenv("who")).orElse("World");
-        return ResponseEntity.ok("Hello " + who);
+        String msg = Optional.of(System.getenv("who")).orElse("World");
+        return ResponseEntity.ok(msg);
     }
+
 }
